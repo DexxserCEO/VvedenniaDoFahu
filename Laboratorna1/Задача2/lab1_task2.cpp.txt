@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int number;
+    int remainder_five;
+    
+    cout << "--- Задание 2: Остаток и Четность ---" << endl;
+    
+    // Ввод целого числа
+    cout << "Введите целое число для проверки: ";
+    cin >> number;
+
+    // 1. Находим остаток от деления на 5
+    remainder_five = number % 5; 
+    cout << "\nОстаток от деления " << number << " на 5: " << remainder_five << endl;
+
+    // 2. Проверка на четность (используем остаток от деления на 2)
+    if (number % 2 == 0) {
+        cout << number << " - это четное число." << endl;
+    } else {
+        cout << number << " - это нечетное число." << endl;
+    }
+
+    // 3. Дополнительно (по требованию методички)
+    cout << "\nДемонстрация оператора остатка (10 % 3): " << 10 % 3 << endl;
+    
+    return 0;
+}
