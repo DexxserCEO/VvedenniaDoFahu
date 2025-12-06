@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int age;
+    int salary;
+    
+    cout << "--- Задание 4: Разветвленная структура (Условие приема) ---" << endl;
+    
+    // Ввод основных данных
+    cout << "Введите Ваш возраст: ";
+    cin >> age;
+    cout << "Введите желаемую зарплату (в у.е.): ";
+    cin >> salary;
+
+    // Проверка сложного условия: (возраст > 20) И (зарплата > 400 И зарплата < 1000)
+    if (age > 20 && salary > 400 && salary < 1000) {
+        cout << "\nWe will consider your position." << endl;
+        
+        // Если условие выполнено, запрашиваем дополнительные данные
+        string name, surname, position;
+        
+        // Использование cin.ignore() для очистки буфера перед getline
+        cin.ignore(); 
+        
+        cout << "Введите Ваше имя: ";
+        getline(cin, name);
+        cout << "Введите Вашу фамилию: ";
+        getline(cin, surname);
+        cout << "Введите желаемую должность: ";
+        getline(cin, position);
+
+        // Вывод всех данных
+        cout << "\n--- Профиль Кандидата ---" << endl;
+        cout << "Имя: " << name << endl;
+        cout << "Фамилия: " << surname << endl;
+        cout << "Возраст: " << age << endl;
+        cout << "Зарплата: " << salary << " у.е." << endl;
+        cout << "Желаемая должность: " << position << endl;
+        
+    } else {
+        // Если условие не выполнено
+        cout << "\nYou are not suitable." << endl;
+    }
+
+    return 0;
+}
