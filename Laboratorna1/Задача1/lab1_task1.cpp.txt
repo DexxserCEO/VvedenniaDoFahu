@@ -1,0 +1,71 @@
+#include <iostream>
+#include <iomanip> // Потрібен для setw, setprecision
+
+using namespace std;
+
+int main() {
+    // 1. Змінні для арифметичних операцій
+    int num1, num2;
+    int sum, diff, prod, quot_int;
+    
+    cout << "--- Арифметичні операції ---" << endl;
+    
+    // Введення цілих чисел
+    cout << "Введіть num1 (ціле): ";
+    cin >> num1;
+    cout << "Введіть num2 (ціле): ";
+    cin >> num2;
+
+    // Обчислення
+    sum = num1 + num2;
+    diff = num1 - num2;
+    prod = num1 * num2;
+    quot_int = num1 / num2; // Цілочисельне ділення
+
+    // Вивід результатів
+    cout << "\nРезультати:" << endl;
+    cout << "Сума: " << sum << endl;
+    cout << "Різниця: " << diff << endl;
+    cout << "Добуток: " << prod << endl;
+    cout << "Частка (цілочисельна): " << quot_int << endl;
+
+    // 2. Змінні для площі та периметра
+    int len_int, wid_int;
+    double area, perimeter;
+
+    cout << "\n--- Площа та Периметр ---" << endl;
+    
+    cout << "Введіть довжину (ціле): ";
+    cin >> len_int;
+    cout << "Введіть ширину (ціле): ";
+    cin >> wid_int;
+
+    // Обчислення (використовуємо приведення типу (double) для точного результату)
+    area = (double)len_int * (double)wid_int;
+    perimeter = 2 * ((double)len_int + (double)wid_int);
+
+    // Вивід результатів (setprecision(2) для двох знаків після коми)
+    cout << "\nРезультати (дійсні числа):" << endl;
+    cout << fixed << setprecision(2);
+    cout << "Площа: " << area << endl;
+    cout << "Периметр: " << perimeter << endl;
+
+    // 3. Інформація про пам'ять
+    cout << "\n--- Інформація про пам'ять ---" << endl;
+    
+    // Вивід інформації для кількох змінних (приклад)
+    cout << "Змінна num1: " 
+         << "Значення = " << num1 
+         << ", Розмір = " << sizeof(num1) << " байт" 
+         << ", Адреса = " << &num1 << endl;
+
+    cout << "Змінна area: " 
+         << "Значення = " << area 
+         << ", Розмір = " << sizeof(area) << " байт" 
+         << ", Адреса = " << &area << endl;
+    
+    cout << "Загальний обсяг пам'яті (sizeof(num1) + sizeof(area)): " 
+         << sizeof(num1) + sizeof(area) << " байт" << endl;
+
+    return 0;
+}
